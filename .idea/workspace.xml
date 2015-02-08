@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54250187-dd63-4f3f-b0f6-3f50a5ead5df" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/setup.py" afterPath="$PROJECT_DIR$/src/setup.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/release.sh" afterPath="$PROJECT_DIR$/release.sh" />
     </list>
     <ignored path="toytable.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,11 +60,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07973422" vertical-offset="0" max-vertical-offset="903">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
               <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="release.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/release.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.123006836" vertical-offset="0" max-vertical-offset="878">
+              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -76,18 +86,6 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="5494" max-vertical-offset="19242">
               <caret line="328" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_table_literal.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/toytable_tests/test_table_literal.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1800">
-              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -148,6 +146,7 @@
         <option value="$PROJECT_DIR$/src/toytable_tests/test_normalize.py" />
         <option value="$PROJECT_DIR$/src/toytable/table.py" />
         <option value="$PROJECT_DIR$/src/setup.py" />
+        <option value="$PROJECT_DIR$/release.sh" />
       </list>
     </option>
   </component>
@@ -749,8 +748,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07973422" vertical-offset="0" max-vertical-offset="903">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
           <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/release.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.123006836" vertical-offset="0" max-vertical-offset="878">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
           <folding />
         </state>
       </provider>
