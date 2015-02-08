@@ -123,6 +123,39 @@ class DerivedColumn(object):
         return describe_column(self.name, self.type)
 
 
+class NormalizedColumn(object):
+
+    def __init__(self, column, normal=1.0):
+        self._column = column
+        self._normal = normal
+
+    def normalize_func(self):
+        col_max = max(self._column)
+        col_min = min(self._column)
+        col_range = col_max - col_min
+        return lambda x: self._normal * (x-col_min) / col_range
+
+    def __iter__(self):
+        return itertools.imap(self.normalize_func(), self._column.__iter__)
+
+    def __getitem__(self, index):
+        fn = self.normalize_func()
+        val = self._column.__getitem__(index)
+        return fn(val)
+
+    @property
+    def name(self):
+        return self._column.name
+
+    @property
+    def type(self):
+        return self._column.type
+
+    @property
+    def description(self):
+        return self._column.description
+
+
 class AggregationColumn(object):
 
     def __init__(self):

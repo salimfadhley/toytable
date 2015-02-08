@@ -1,11 +1,11 @@
 import logging
 import six.moves
 import itertools
-from collections import namedtuple, OrderedDict
+from collections import OrderedDict
 from six import string_types
 from weakref import WeakValueDictionary, WeakSet
 
-from .columns import DerivedColumn, Column, DerivedTableColumn, StaticColumn, JoinColumn, ArrayColumn, describe_column
+from .columns import DerivedColumn, Column, DerivedTableColumn, StaticColumn, JoinColumn, ArrayColumn, describe_column, NormalizedColumn
 from .row import TableRow
 from .exceptions import InvalidData, InvalidJoinMode
 from .index import Index
@@ -124,11 +124,8 @@ class Table(object):
     def column_types(self):
         """Get the table's column types as a list of types.
         """
-        try:
-            return [c.type for c in self._all_columns]
-        except AttributeError:
-            import pdb
-            pdb.set_trace()
+        return [c.type for c in self._all_columns]
+
 
     @property
     def _column_descriptions(self):
@@ -517,6 +514,29 @@ class Table(object):
             aggregations=aggregations
         )
 
+    def normalize(self, normalizations):
+        """
+        Return a version of the table with columns normalized.
+
+        :param normalizations: dict mapping column names to their normalized range (typically 1).
+        :return: A derived ToyTable with the normalizations applied.
+        """
+
+        def normalize_col(c):
+            """
+            Inner function, normalize a column c if required
+            :param c:  toytable.column.Column
+            :return: either a normalized colukn or the original column
+            """
+            if c.name in normalizations:
+                return NormalizedColumn(c, normalizations[c.name])
+            else:
+                return c
+
+        return DerivedTable(indices_func=self._indices_func,
+                            columns = [normalize_col(c) for c in self._all_columns]
+        )
+
 
 class AggregationTable(Table):
 
@@ -782,3 +802,26 @@ class JoinTable(DerivedTable):
                     (jc._column[ji] for jc in jcs)
                 )
             yield TableRow(r, s)
+
+
+# class NormalizedTable(DerivedTable):
+#
+#     def __init__(self, indices_func, columns, rename_dict=None, normalizations=None):
+#         DerivedTable.__init__(self, indices_func, columns, rename_dict)
+#         self._normalizations = normalizations or {}
+#
+#     def _get_column(self, name):
+#         _c = super(DerivedTable, self)._get_column(name)
+#
+#         if self._normalizations.has_key(name):
+#             n = self._normalizations[name]
+#             return NormalizedColumn(_c, n)
+#         return _c
+#
+#     @property
+#     def _all_columns(self):
+#         for c in super(DerivedTable, self)._all_columns:
+#             print("ddssdsds")
+#
+#
+#
