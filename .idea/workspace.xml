@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54250187-dd63-4f3f-b0f6-3f50a5ead5df" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/toytable/table.py" afterPath="$PROJECT_DIR$/src/toytable/table.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/toytable_tests/test_normalize.py" afterPath="$PROJECT_DIR$/src/toytable_tests/test_normalize.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/setup.py" afterPath="$PROJECT_DIR$/src/setup.py" />
     </list>
     <ignored path="toytable.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,14 +38,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_normalize.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_normalize.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/toytable_tests/test_normalize.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24252492" vertical-offset="51" max-vertical-offset="1170">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="20" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1170">
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setup.cfg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/setup.cfg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="126">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.07973422" vertical-offset="0" max-vertical-offset="903">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,18 +85,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1800">
               <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_table_test_mixin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/toytable_tests/test_table_test_mixin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="2592">
-              <caret line="5" column="58" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="58" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -120,16 +126,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__builtin__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm40/system/python_stubs/1119407387/__builtin__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="40455" max-vertical-offset="92664">
-              <caret line="2262" column="11" selection-start-line="2262" selection-start-column="10" selection-end-line="2262" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test_expand.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/toytable_tests/test_expand.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -151,6 +147,7 @@
         <option value="$PROJECT_DIR$/src/toytable/columns.py" />
         <option value="$PROJECT_DIR$/src/toytable_tests/test_normalize.py" />
         <option value="$PROJECT_DIR$/src/toytable/table.py" />
+        <option value="$PROJECT_DIR$/src/setup.py" />
       </list>
     </option>
   </component>
@@ -734,11 +731,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/toytable_tests/test_normalize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24252492" vertical-offset="51" max-vertical-offset="1170">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="20" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1170">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/setup.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="903">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07973422" vertical-offset="0" max-vertical-offset="903">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
