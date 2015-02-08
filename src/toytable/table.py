@@ -124,11 +124,8 @@ class Table(object):
     def column_types(self):
         """Get the table's column types as a list of types.
         """
-        try:
-hg shg s            return [c.type for c in self._all_columns]
-        except AttributeError:
-            import pdb
-            pdb.set_trace()
+        return [c.type for c in self._all_columns]
+
 
     @property
     def _column_descriptions(self):
@@ -519,10 +516,14 @@ hg shg s            return [c.type for c in self._all_columns]
 
     def normalize(self, normalizations):
 
-        return NormalizedTable(indices_func=self._indices_func,
-                               columns = self._all_columns,
-                               rename_dict= None,
-                               normalizations=normalizations
+        def normalize_col(c):
+            if c.name in normalizations:
+                return NormalizedColumn(c, normalizations[c.name])
+            else:
+                return c
+
+        return DerivedTable(indices_func=self._indices_func,
+                            columns = [normalize_col(c) for c in self._all_columns]
         )
 
 
@@ -792,24 +793,24 @@ class JoinTable(DerivedTable):
             yield TableRow(r, s)
 
 
-class NormalizedTable(DerivedTable):
-
-    def __init__(self, indices_func, columns, rename_dict=None, normalizations=None):
-        DerivedTable.__init__(self, indices_func, columns, rename_dict)
-        self._normalizations = normalizations or {}
-
-    def _get_column(self, name):
-        _c = super(DerivedTable, self)._get_column(name)
-
-        if self._normalizations.has_key(name):
-            n = self._normalizations[name]
-            return NormalizedColumn(_c, n)
-        return _c
-
-    @property
-    def _all_columns(self):
-        for c in super(DerivedTable, self)._all_columns:
-            print("ddssdsds")
-
-
-
+# class NormalizedTable(DerivedTable):
+#
+#     def __init__(self, indices_func, columns, rename_dict=None, normalizations=None):
+#         DerivedTable.__init__(self, indices_func, columns, rename_dict)
+#         self._normalizations = normalizations or {}
+#
+#     def _get_column(self, name):
+#         _c = super(DerivedTable, self)._get_column(name)
+#
+#         if self._normalizations.has_key(name):
+#             n = self._normalizations[name]
+#             return NormalizedColumn(_c, n)
+#         return _c
+#
+#     @property
+#     def _all_columns(self):
+#         for c in super(DerivedTable, self)._all_columns:
+#             print("ddssdsds")
+#
+#
+#

@@ -17,15 +17,15 @@ class TestNormalize(unittest.TestCase, TableTestMixin):
         self.t.extend([
             [1, 0.0, 'x'],
             [2, 5.0, 'y'],
-            [2, 10.0, 'z'],
+            [3, 10.0, 'z'],
         ])
 
     def test_basic_normalize(self):
         t = self.t.normalize({"B":1.0})
         self.assertEqual(list(t.B), [0, 0.5, 1])
 
-    def test_repr_of_normalized_table(self):
-        t = self.t.normalize({"B":1.0})
+    def test_whole_of_normalized_table(self):
+        tn = self.t.normalize({"B":1.0})
 
         expected = table_literal("""
         | A (int) | B (float) | C (str) |
@@ -34,7 +34,26 @@ class TestNormalize(unittest.TestCase, TableTestMixin):
         | 3       | 1.0       | z       |
         """)
 
-        self.assertTablesEqual(t, expected)
+        self.assertTablesEqual(tn, expected)
+
+    def test_expand_of_normalized_table(self):
+        tn = self.t.normalize({"B":1.0}).expand(
+            name='D',
+            type=float,
+            input_columns=['A','C'],
+            fn=lambda A,C: A * C
+        )
+
+        expected = table_literal("""
+        | A (int) | B (float) | C (str) | D (float) |
+        | 1       | 0         | x       | 1.0       |
+        | 2       | 0.5       | y       | 1.0       |
+        | 3       | 1.0       | z       | 3.0       |
+        """)
+
+        self.assertTablesEqual(tn, expected)
+
+
 
 if __name__ == '__main__':
     unittest.main()
