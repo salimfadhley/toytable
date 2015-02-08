@@ -1,11 +1,11 @@
 import logging
 import six.moves
 import itertools
-from collections import namedtuple, OrderedDict
+from collections import OrderedDict
 from six import string_types
 from weakref import WeakValueDictionary, WeakSet
 
-from .columns import DerivedColumn, Column, DerivedTableColumn, StaticColumn, JoinColumn, ArrayColumn, describe_column
+from .columns import DerivedColumn, Column, DerivedTableColumn, StaticColumn, JoinColumn, ArrayColumn, describe_column, NormalizedColumn
 from .row import TableRow
 from .exceptions import InvalidData, InvalidJoinMode
 from .index import Index
@@ -125,7 +125,7 @@ class Table(object):
         """Get the table's column types as a list of types.
         """
         try:
-            return [c.type for c in self._all_columns]
+hg shg s            return [c.type for c in self._all_columns]
         except AttributeError:
             import pdb
             pdb.set_trace()
@@ -517,6 +517,14 @@ class Table(object):
             aggregations=aggregations
         )
 
+    def normalize(self, normalizations):
+
+        return NormalizedTable(indices_func=self._indices_func,
+                               columns = self._all_columns,
+                               rename_dict= None,
+                               normalizations=normalizations
+        )
+
 
 class AggregationTable(Table):
 
@@ -782,3 +790,26 @@ class JoinTable(DerivedTable):
                     (jc._column[ji] for jc in jcs)
                 )
             yield TableRow(r, s)
+
+
+class NormalizedTable(DerivedTable):
+
+    def __init__(self, indices_func, columns, rename_dict=None, normalizations=None):
+        DerivedTable.__init__(self, indices_func, columns, rename_dict)
+        self._normalizations = normalizations or {}
+
+    def _get_column(self, name):
+        _c = super(DerivedTable, self)._get_column(name)
+
+        if self._normalizations.has_key(name):
+            n = self._normalizations[name]
+            return NormalizedColumn(_c, n)
+        return _c
+
+    @property
+    def _all_columns(self):
+        for c in super(DerivedTable, self)._all_columns:
+            print("ddssdsds")
+
+
+
