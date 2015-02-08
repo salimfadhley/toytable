@@ -40,13 +40,13 @@ class TestNormalize(unittest.TestCase, TableTestMixin):
         tn = self.t.normalize({"B":1.0}).expand(
             name='D',
             type=float,
-            input_columns=['A','C'],
-            fn=lambda A,C: A * C
+            input_columns=['A','B'],
+            fn=lambda A,B: A * B
         )
 
         expected = table_literal("""
         | A (int) | B (float) | C (str) | D (float) |
-        | 1       | 0         | x       | 1.0       |
+        | 1       | 0         | x       | 0.0       |
         | 2       | 0.5       | y       | 1.0       |
         | 3       | 1.0       | z       | 3.0       |
         """)

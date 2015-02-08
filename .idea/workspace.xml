@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54250187-dd63-4f3f-b0f6-3f50a5ead5df" name="Default" comment="" />
+    <list default="true" id="54250187-dd63-4f3f-b0f6-3f50a5ead5df" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/toytable/table.py" afterPath="$PROJECT_DIR$/src/toytable/table.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/toytable_tests/test_normalize.py" afterPath="$PROJECT_DIR$/src/toytable_tests/test_normalize.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="toytable.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +43,8 @@
       <file leaf-file-name="test_normalize.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/toytable_tests/test_normalize.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43396226" vertical-offset="472" max-vertical-offset="1170">
-              <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.24252492" vertical-offset="51" max-vertical-offset="1170">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="20" selection-end-column="10" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -107,8 +111,8 @@
       <file leaf-file-name="table.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/toytable/table.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.5161295" vertical-offset="2050" max-vertical-offset="14796">
-              <caret line="132" column="33" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="8391" max-vertical-offset="14994">
+              <caret line="521" column="68" selection-start-line="521" selection-start-column="68" selection-end-line="521" selection-end-column="68" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -144,9 +148,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/toytable_tests/test_column.py" />
-        <option value="$PROJECT_DIR$/src/toytable/table.py" />
         <option value="$PROJECT_DIR$/src/toytable/columns.py" />
         <option value="$PROJECT_DIR$/src/toytable_tests/test_normalize.py" />
+        <option value="$PROJECT_DIR$/src/toytable/table.py" />
       </list>
     </option>
   </component>
@@ -247,6 +251,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toytable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toytable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -267,7 +289,7 @@
       <recent name="$PROJECT_DIR$/src/toytable_tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestNormalize.test_whole_of_normalized_table">
+  <component name="RunManager" selected="Python tests.Unittest TestNormalize.test_expand_of_normalized_table">
     <configuration default="false" name="Unittests in toytable_tests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -291,30 +313,6 @@
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in test_column" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/toytable_tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="toytable" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/toytable_tests/test_column.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -392,6 +390,30 @@
       <option name="USE_PARAM" value="false" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestNormalize.test_expand_of_normalized_table" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/toytable_tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="toytable" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/toytable_tests/test_normalize.py" />
+      <option name="CLASS_NAME" value="TestNormalize" />
+      <option name="METHOD_NAME" value="test_expand_of_normalized_table" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="py.test">
@@ -518,18 +540,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in toytable_tests" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_column" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestNormalize.test_repr_of_normalized_table" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test_normalize" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestNormalize.test_whole_of_normalized_table" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestNormalize.test_repr_of_normalized_table" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_normalize" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestNormalize.test_whole_of_normalized_table" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestNormalize.test_expand_of_normalized_table" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestNormalize.test_whole_of_normalized_table" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_normalize" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in toytable_tests" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestNormalize.test_repr_of_normalized_table" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_column" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestNormalize.test_expand_of_normalized_table" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestNormalize.test_whole_of_normalized_table" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_normalize" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in toytable_tests" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestNormalize.test_repr_of_normalized_table" />
       </list>
     </recent_temporary>
   </component>
@@ -555,7 +577,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -563,8 +585,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39978564" sideWeight="0.5960699" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39978564" sideWeight="0.5960699" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48445874" sideWeight="0.60753274" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -602,7 +624,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/src/toytable/table.py</url>
-          <line>812</line>
+          <line>823</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -682,16 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/toytable/table.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.5161295" vertical-offset="2050" max-vertical-offset="14796">
-          <caret line="132" column="33" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/toytable/columns.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.516129" vertical-offset="2416" max-vertical-offset="3780">
@@ -710,10 +722,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/toytable/table.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8391" max-vertical-offset="14994">
+          <caret line="521" column="68" selection-start-line="521" selection-start-column="68" selection-end-line="521" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/toytable_tests/test_normalize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43396226" vertical-offset="472" max-vertical-offset="1170">
-          <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.24252492" vertical-offset="51" max-vertical-offset="1170">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="20" selection-end-column="10" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

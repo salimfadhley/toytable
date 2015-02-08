@@ -515,8 +515,19 @@ class Table(object):
         )
 
     def normalize(self, normalizations):
+        """
+        Return a version of the table with columns normalized.
+
+        :param normalizations: dict mapping column names to their normalized range (typically 1).
+        :return: A derived ToyTable with the normalizations applied.
+        """
 
         def normalize_col(c):
+            """
+            Inner function, normalize a column c if required
+            :param c:  toytable.column.Column
+            :return: either a normalized colukn or the original column
+            """
             if c.name in normalizations:
                 return NormalizedColumn(c, normalizations[c.name])
             else:
