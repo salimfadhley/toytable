@@ -34,6 +34,16 @@ class TestNormalize(unittest.TestCase, TableTestMixin):
         | 3       | 1.0       | z       |
         """)
 
+    def test_whole_of_normalized_table_100(self):
+        tn = self.t.normalize({"B":100})
+
+        expected = table_literal("""
+        | A (int) | B (float) | C (str) |
+        | 1       | 0         | x       |
+        | 2       | 50        | y       |
+        | 3       | 100       | z       |
+        """)
+
         self.assertTablesEqual(tn, expected)
 
     def test_expand_of_normalized_table(self):
