@@ -1,3 +1,4 @@
+import csv
 import logging
 import six.moves
 import itertools
@@ -450,6 +451,8 @@ class Table(object):
 
         All columns will be sperated by | symbols and
         padded with whitespace as required.
+
+        This format is the inverse of table_literal
         """
         cl = self._get_column_widths()
         out = []
@@ -536,6 +539,26 @@ class Table(object):
         return DerivedTable(indices_func=self._indices_func,
                             columns = [normalize_col(c) for c in self._all_columns]
         )
+
+    def to_csv(self, output_file, dialect="excel", descriptions=False):
+        """
+        Save this table to a file in CSV format (or any dialect variation supported
+        by Python's CSV library).
+
+        :param output_file: A file or file-like object (not a filename)
+        :param dialect: Any previously registered CSV writer dialect name
+        :param descriptions: Set to True if you want to include column descriptions rather than column-names
+        :return: None
+        """
+        writer = csv.writer(output_file, dialect=dialect)
+
+        if descriptions:
+            writer.writerow(self._column_descriptions)
+        else:
+            writer.writerow(self.column_names)
+
+        for row in self:
+            writer.writerow(row)
 
 
 class AggregationTable(Table):

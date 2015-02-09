@@ -22,7 +22,6 @@ def describe_column(name, typ):
         typ.__name__
     )
 
-
 class Column(list):
     def __init__(self, name, values=[], type=object):
         list.__init__(self)
