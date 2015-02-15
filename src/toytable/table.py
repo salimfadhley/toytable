@@ -6,7 +6,7 @@ from collections import OrderedDict
 from six import string_types
 from weakref import WeakValueDictionary, WeakSet
 
-from .columns import DerivedColumn, Column, DerivedTableColumn, StaticColumn, JoinColumn, ArrayColumn, describe_column, NormalizedColumn
+from .columns import (DerivedColumn, Column, DerivedTableColumn, StaticColumn, JoinColumn, ArrayColumn, describe_column, NormalizedColumn, StandardizedColumn)
 from .row import TableRow
 from .exceptions import InvalidData, InvalidJoinMode
 from .index import Index
@@ -538,6 +538,22 @@ class Table(object):
 
         return DerivedTable(indices_func=self._indices_func,
                             columns = [normalize_col(c) for c in self._all_columns]
+        )
+
+    def standardize(self, standardizations):
+        def standardize_col(c):
+            """
+            Inner function, normalize a column c if required
+            :param c:  toytable.column.Column
+            :return: either a normalized colukn or the original column
+            """
+            if c.name in standardizations:
+                return StandardizedColumn(c, standardizations[c.name])
+            else:
+                return c
+
+        return DerivedTable(indices_func=self._indices_func,
+                            columns = [standardize_col(c) for c in self._all_columns]
         )
 
     def to_csv(self, output_file, dialect="excel", descriptions=False):

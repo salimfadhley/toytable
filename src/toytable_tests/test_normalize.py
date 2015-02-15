@@ -24,6 +24,12 @@ class TestNormalize(unittest.TestCase, TableTestMixin):
         t = self.t.normalize({"B":1.0})
         self.assertEqual(list(t.B), [0, 0.5, 1])
 
+    def test_basic_standardization(self):
+        t = self.t.standardize({"B":1.0})
+        result = list(t.B)
+        self.assertEqual(result[1], 0)
+        self.assertEqual(result[0], result[2]*-1)
+
     def test_whole_of_normalized_table(self):
         tn = self.t.normalize({"B":1.0})
 
