@@ -122,7 +122,31 @@ class DerivedColumn(object):
         return describe_column(self.name, self.type)
 
 
-class NormalizedColumn(object):
+class FunctionColumn(object):
+    """Base class for columns which simply apply a function to
+    another column.
+    """
+
+    @property
+    def name(self):
+        return self._column.name
+
+    @property
+    def type(self):
+        return self._column.type
+
+    @property
+    def description(self):
+        return self._column.description
+
+
+
+class NormalizedColumn(FunctionColumn):
+    """Normalize all of the values in a column
+
+    Remaps the lowst value to 0, and the highest value to self._normal,
+    lineraly scaling all of the values inbetween.
+    """
 
     def __init__(self, column, normal=1.0):
         self._column = column
@@ -142,20 +166,14 @@ class NormalizedColumn(object):
         val = self._column.__getitem__(index)
         return fn(val)
 
-    @property
-    def name(self):
-        return self._column.name
-
-    @property
-    def type(self):
-        return self._column.type
-
-    @property
-    def description(self):
-        return self._column.description
 
 
-class StandardizedColumn(object):
+class StandardizedColumn(FunctionColumn):
+    """Standardize all of the values in a column
+
+    Remaps the average value to zero, and normalizes
+    all of the scores.
+    """
 
     def __init__(self, column, range=1.0):
         self._column = column
@@ -179,26 +197,8 @@ class StandardizedColumn(object):
         val = self._column.__getitem__(index)
         return fn(val)
 
-    @property
-    def name(self):
-        return self._column.name
 
-    @property
-    def type(self):
-        return self._column.type
-
-    @property
-    def description(self):
-        return self._column.description
-
-
-class AggregationColumn(object):
-
-    def __init__(self):
-        pass
-
-
-class DerivedTableColumn(object):
+class DerivedTableColumn(FunctionColumn):
 
     """Not so much a derived column, but a column on a
     derived table"""
@@ -206,18 +206,6 @@ class DerivedTableColumn(object):
     def __init__(self, indices_func, column, name=None):
         self._indices_func = indices_func
         self._column = column
-
-    @property
-    def name(self):
-        return self._column.name
-
-    @property
-    def type(self):
-        return self._column.type
-
-    @property
-    def description(self):
-        return self._column.description
 
     def __iter__(self):
         for i in self._indices_func():
