@@ -91,3 +91,4 @@ def table_literal(repr_string, default_type=str):
     t.extend(data)
 
     return t
+

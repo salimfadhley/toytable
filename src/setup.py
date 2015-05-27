@@ -3,7 +3,7 @@ from setuptools import setup
 import os
 
 PROJECT_ROOT, _ = os.path.split(__file__)
-REVISION = '0.0.38'
+REVISION = '0.0.44'
 PROJECT_NAME = 'toytable'
 PROJECT_AUTHORS = "Salim Fadhley"
 PROJECT_EMAILS = 'salimfadhley@gmail.com'
@@ -23,7 +23,7 @@ setup(
     packages=['toytable', 'toytable_tests'],
     zip_safe=True,
     include_package_data=False,
-    install_requires=['bintrees>=2.0.1', 'six>=1.7.3'],
+    install_requires=['bintrees', 'six'],
     test_suite='nose.collector',
     tests_require=['mock', 'nose', 'coverage'],
     url=PROJECT_URL,
