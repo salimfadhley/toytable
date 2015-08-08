@@ -55,7 +55,7 @@ class TestNormalize(unittest.TestCase, TableTestMixin):
     def test_expand_of_normalized_table(self):
         tn = self.t.normalize({"B":1.0}).expand(
             name='D',
-            type=float,
+            col_type=float,
             input_columns=['A','B'],
             fn=lambda A,B: A * B
         )
@@ -113,7 +113,7 @@ class TestNormalize(unittest.TestCase, TableTestMixin):
             name='D',
             input_columns=['A', 'B', 'C'],
             fn=lambda a,b,c: float(len(c) + a + b),
-            col_type='float'
+            col_type=float
         )
         self.assertEqual(t.D.description, "D (float)")
 

@@ -14,5 +14,5 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" default="false" assert-keyword="false" jdk-15="false" project-jdk-name="Python 3.4.0 virtualenv at ~/workspace/toytable/venv" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="Python 3.4.3 virtualenv at ~/workspace/toytable/venv" project-jdk-type="Python SDK" />
 </project>
