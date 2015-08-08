@@ -140,7 +140,6 @@ class FunctionColumn(object):
         return self._column.description
 
 
-
 class NormalizedColumn(FunctionColumn):
     """Normalize all of the values in a column
 
