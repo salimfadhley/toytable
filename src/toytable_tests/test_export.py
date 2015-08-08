@@ -53,7 +53,7 @@ class TestExport(unittest.TestCase, TableTestMixin):
             input_columns=['C'],
             fn=lambda C: len(C)
         )
-        self.assertEqual(list(t.D), [5, 5])
+        self.assertEqual(list(t.D), [1, 1, 1])
 
 
     def test_derived_columns_are_iterable(self):
