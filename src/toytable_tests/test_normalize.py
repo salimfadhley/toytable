@@ -77,7 +77,7 @@ class TestNormalize(unittest.TestCase, TableTestMixin):
             input_columns=['C'],
             fn=lambda C: len(C)
         )
-        self.assertEqual(list(t.D), [5, 5])
+        self.assertEqual(list(t.D), [1,1,1])
 
     def test_derived_columns_are_iterable(self):
         t = self.t.expand(
@@ -121,13 +121,14 @@ class TestNormalize(unittest.TestCase, TableTestMixin):
         t = self.t.expand(
             name='D',
             col_type=int,
-            input_columns=['C'],
-            fn=lambda C: len(C) + 1
+            input_columns=['A', 'C'],
+            fn=lambda A, C: len(C) + A
         ).copy()
 
         expected = [
-            (1, 1.1, 'hello', 6),
-            (2, 2.2, 'yello', 6),
+            (1, 0.0, 'x', 2),
+            (2, 5.0, 'y', 3),
+            (3, 10.0, 'z', 4),
         ]
 
         self.assertEqual(list(t), expected)
@@ -138,11 +139,11 @@ class TestNormalize(unittest.TestCase, TableTestMixin):
             name='D',
             col_type=int,
             input_columns=['C'],
-            fn=lambda C: len(C) + 1
-        )[1:]
+            fn=lambda C: len(C) + 2
+        )[1:2]
 
         expected = [
-            (2, 2.2, 'yello', 6),
+            (2, 5.0, 'y', 3),
         ]
 
         self.assertEqual(list(t), expected)

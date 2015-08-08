@@ -117,10 +117,10 @@ class TestExport(unittest.TestCase, TableTestMixin):
             col_type=int,
             input_columns=['C'],
             fn=lambda C: len(C) + 1
-        )[1:]
+        )[1:2]
 
         expected = [
-            (2, 2.2, 'yello', 6),
+            (2, 5.0, 'y', 2),
         ]
 
         self.assertEqual(list(t), expected)
